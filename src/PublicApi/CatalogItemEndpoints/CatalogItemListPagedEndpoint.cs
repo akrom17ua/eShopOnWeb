@@ -14,7 +14,13 @@ namespace Microsoft.eShopWeb.PublicApi.CatalogItemEndpoints;
 /// List Catalog Items (paged)
 /// </summary>
 public class CatalogItemListPagedEndpoint(IRepository<CatalogItem> itemRepository, IUriComposer uriComposer,
-        AutoMapper.IMapper mapper)
+        AutoMapper.IMapper mapper,  ILogger<CatalogItemListPagedEndpoint> logger)
+    {
+        _itemRepository = itemRepository;
+        _uriComposer = uriComposer;
+        _mapper = mapper;
+        _logger = logger;
+    } 
     : Endpoint<ListPagedCatalogItemRequest, ListPagedCatalogItemResponse>
 {
     public override void Configure()
