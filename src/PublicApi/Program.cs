@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NimblePros.Metronome;
-builder.Services.AddApplicationInsightsTelemetry();
+
 
 var builder = WebApplication.CreateBuilder(args);
 
