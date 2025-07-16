@@ -9,6 +9,7 @@ using Microsoft.eShopWeb.Web.Areas.Identity.Helpers;
 using Microsoft.eShopWeb.Web.Configuration;
 using Microsoft.eShopWeb.Web.Extensions;
 using NimblePros.Metronome;
+builder.Services.AddApplicationInsightsTelemetry();
 
 var builder = WebApplication.CreateBuilder(args);
 
