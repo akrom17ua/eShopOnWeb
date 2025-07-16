@@ -32,6 +32,8 @@ public class CreateCatalogItemEndpoint(IRepository<CatalogItem> itemRepository, 
 
         var catalogItemNameSpecification = new CatalogItemNameSpecification(request.Name);
         var existingCataloogItem = await itemRepository.CountAsync(catalogItemNameSpecification, ct);
+        _logger.LogInformation("Number of items returned: {Count}", items.Count);
+
         if (existingCataloogItem > 0)
         {
             throw new DuplicateException($"A catalogItem with name {request.Name} already exists");
